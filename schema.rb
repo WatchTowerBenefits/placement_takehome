@@ -1,5 +1,5 @@
 # Products represent details of a specific insurance policy. A product starts out as 
-# a quote and then becomes a policy when it's selected by the employer.
+# a proposal and then becomes a policy when it's selected by the buyer.
 create_table "products", id: :serial, force: :cascade do |t|  
   t.bigint "carrier_id"
   t.string "status"
@@ -51,7 +51,9 @@ create_table "brokers", id: :serial, force: :cascade do |t|
 end
 
 # Employers represent companies that buy insurance products
-# for their employees
+# for their employees. In the industry employers are represented
+# by brokers when purchasing insurance products from carriers, so 
+# employers belong to a broker.
 create_table "employers", id: :serial, force: :cascade do |t|
   t.string "name"
   t.string "address1"
@@ -99,15 +101,15 @@ end
 
 # Values hold a single value that describes an attribute for a given
 # insurance product
-create_table "plan_design_values", force: :cascade do |t|
-  t.bigint "plan_design_attribute_id", null: false
+create_table "values", force: :cascade do |t|
+  t.bigint "attribute_id", null: false
   t.bigint "product_id", null: false
   t.string "value"
   t.datetime "created_at", precision: nil, null: false
   t.datetime "updated_at", precision: nil, null: false
-  t.index ["plan_design_attribute_id", "product_id"], name: "idx_plan_design_val_unique", unique: true
-  t.index ["plan_design_attribute_id"], name: "index_plan_design_values_on_plan_design_attribute_id"
-  t.index ["product_id"], name: "index_plan_design_values_on_product_id"
+  t.index ["attribute_id", "product_id"], name: "idx_val_unique", unique: true
+  t.index ["attribute_id"], name: "index_values_on_attribute_id"
+  t.index ["product_id"], name: "inde_values_on_product_id"
 end
 
 # Join table to associate attributes with product types to which
