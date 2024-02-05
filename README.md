@@ -14,7 +14,7 @@ Using the information provided in the schema file and feedback sheets, your task
 You may prepare your work plan in whatever format you're comfortable with.  Please DO NOT open a PR to this repository.
 
 ### Expected Output and Submitting Your Work
-We respect your time and don't want you to spend more than 2-3 hours. Please submit your work plan to whatever@whoever.com. *If* you have diagrams, notes, or any additional material that you'd like to submit that explains your line of thinking, you're welcome to include it.
+We respect your time and don't want you to spend more than 2-3 hours. Please submit your work plan to amyzoeller@threeflow.com. *If* you have diagrams, notes, or any additional material that you'd like to submit that explains your line of thinking, you're welcome to include it with your submission.
 
 ### During the Follup Up Meeting
 We will...
